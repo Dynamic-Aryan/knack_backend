@@ -1,22 +1,22 @@
-// import express from "express";
-// import { isAuthenticated } from "../middlewares/auth.js";
-// import { buySubscription, cancelSubscription, getRazorPayKey, paymentVerification } from "../controllers/paymentController.js";
+import express from "express";
+import { isAuthenticated } from "../middlewares/auth.js";
+import { buySubscription, cancelSubscription, getRazorPayKey, paymentVerification } from "../controllers/paymentController.js";
 
 
 
-// const router = express.Router();
+const router = express.Router();
 
-// //Buy Subs
-// router.route("/subscribe").get(isAuthenticated,buySubscription)
+//Buy Subs
+router.route("/subscribe").get(isAuthenticated,buySubscription)
 
-// // verify payment and save reference in database
-// router.route("/paymentverification").post(isAuthenticated,paymentVerification)
+// verify payment and save reference in database
+router.route("/paymentverification").post(isAuthenticated,paymentVerification)
 
-// // Get Razorpay Key
-// // router.route("/razorpaykey").get(getRazorPayKey);
+// Get Razorpay Key
+router.route("/razorpaykey").get(getRazorPayKey);
 
-// //cancel subscription
-// router.route("/subscribe/cancel").delete(isAuthenticated,cancelSubscription)
+//cancel subscription
+router.route("/subscribe/cancel").delete(isAuthenticated,cancelSubscription)
 
 
-// export default router;
+export default router;
